@@ -1,0 +1,46 @@
+{
+  "name": "pon-task-file-encrypt",
+  "version": "1.0.0",
+  "description": "Pon task to encrypt a file",
+  "main": "lib",
+  "browser": "shim/browser",
+  "scripts": {
+    "prepare": "node ./ci/build.js && node ./ci/shim.js ",
+    "test": "node ./ci/test.js"
+  },
+  "repository": "realglobe-Inc/pon-task-file-encrypt",
+  "keywords": [
+    "Pon"
+  ],
+  "author": {
+    "name": "FujiHaruka",
+    "email": "fujiharuka@realglobe.jp",
+    "url": "https://github.com/FujiHaruka"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/realglobe-Inc/pon-task-file-encrypt/issues"
+  },
+  "homepage": "https://github.com/realglobe-Inc/pon-task-file-encrypt#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "ababel": "*",
+    "ababel-es2015": "*",
+    "amocha": "^2.0.0",
+    "ape-doc": "^2.0.4",
+    "ape-formatting": "^1.0.2",
+    "ape-releasing": "^4.0.4",
+    "ape-tasking": "^4.0.9",
+    "ape-tmpl": "^5.0.20",
+    "ape-updating": "^4.1.0",
+    "coz": "^6.0.20",
+    "injectmock": "^2.0.0",
+    "pon-context": "^2.0.1",
+    "pon-doc": "^2.0.1",
+    "sugos-travis": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=7.6",
+    "npm": ">=4"
+  }
+}
