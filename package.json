@@ -22,7 +22,9 @@
     "url": "https://github.com/realglobe-Inc/pon-task-file-encrypt/issues"
   },
   "homepage": "https://github.com/realglobe-Inc/pon-task-file-encrypt#readme",
-  "dependencies": {},
+  "dependencies": {
+    "file-encryptor": "^0.1.1"
+  },
   "devDependencies": {
     "ababel": "*",
     "ababel-es2015": "*",
