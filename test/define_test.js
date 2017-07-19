@@ -7,6 +7,7 @@
 const define = require('../lib/define.js')
 const ponContext = require('pon-context')
 const { ok } = require('assert')
+const { basename } = require('path')
 
 describe('define', function () {
   this.timeout(3000)
@@ -21,10 +22,14 @@ describe('define', function () {
 
   it('Define', async () => {
     let ctx = ponContext()
-    let task = define({})
-    ok(task)
+    let { encrypt, decrypt } = define
+    const SECRET_KEY = 'aaa'
+    const filename = basename(__filename)
+    let encryptTask = encrypt(`test/${filename}`, `tmp/${filename}.enc`, SECRET_KEY)
+    await encryptTask(ctx)
 
-    await Promise.resolve(task(ctx))
+    let decryptTask = decrypt(`tmp/${filename}.enc`, `tmp/${filename}`, SECRET_KEY)
+    await decryptTask(ctx)
   })
 })
 

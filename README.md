@@ -75,14 +75,15 @@ Usage
 'use strict'
 
 const pon = require('pon')
-const ponTaskFileEncrypt = require('pon-task-file-encrypt')
+const { encrypt, decrypt } = require('pon-task-file-encrypt')
 
 ;(async () => {
   let run = pon({
-    myTask01: ponTaskFileEncrypt()
+    encrypt: encrypt('secret.json', 'secret.json.enc', 'password123'),
+    decrypt: decrypt('secret.json.enc', 'secret.json', 'password123')
   })
 
-  run('myTask01')
+  run('encrypt')
 }).catch((err) => console.error(err))
 
 ```
@@ -98,12 +99,27 @@ Signatures
 ---------
 
 
-### `define(options) -> function`
+### `decrypt(src, dest, key, options) -> function`
 
-Define task
+decrypt task
 
 | Param | type | Description |
 | ---- | --- | ----------- |
+| src | string |  Source file path |
+| dest | string |  Destination file path |
+| key | string |  Secret key string |
+| options | Object |  Optional settings |
+
+
+### `encrypt(src, dest, key, options) -> function`
+
+encrypt task
+
+| Param | type | Description |
+| ---- | --- | ----------- |
+| src | string |  Source file path |
+| dest | string |  Destination file path |
+| key | string |  Secret key string |
 | options | Object |  Optional settings |
 
 
