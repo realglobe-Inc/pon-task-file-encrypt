@@ -8,10 +8,4 @@
 
 const define = require('./define')
 
-let lib = define.bind(this)
-
-Object.assign(lib, define, {
-  define
-})
-
-module.exports = lib
+module.exports = define
