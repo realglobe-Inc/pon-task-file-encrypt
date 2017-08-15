@@ -25,10 +25,10 @@ describe('define', function () {
     let { encrypt, decrypt } = define
     const SECRET_KEY = 'aaa'
     const filename = basename(__filename)
-    let encryptTask = encrypt(`test/${filename}`, `tmp/${filename}.enc`, SECRET_KEY)
+    let encryptTask = encrypt(`test/${filename}`, `tmp/${filename}.enc`, SECRET_KEY, {force: true})
     await encryptTask(ctx)
 
-    let decryptTask = decrypt(`tmp/${filename}.enc`, `tmp/${filename}`, SECRET_KEY)
+    let decryptTask = decrypt(`tmp/${filename}.enc`, `tmp/${filename}`, SECRET_KEY, {force: true})
     await decryptTask(ctx)
   })
 })
